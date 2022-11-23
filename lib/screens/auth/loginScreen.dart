@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/screens/auth/ResetPassword.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -30,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
               alignment: Alignment.center,
               margin: EdgeInsets.only(left: 25, top: 15, right: 25),
               child: Column(
-                children: [
+                children: const [
                   Text(
                     "Pour commencer, entrer votre numéro de téléphone, votre adresse email ou votre @nomdutilisateur",
                     style: TextStyle(
@@ -52,11 +53,19 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Mot de passe oublié ?",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResetPassword()),
+                      );
+                    },
+                    child: Text(
+                      "Mot de passe oublié ?",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   ElevatedButton(
