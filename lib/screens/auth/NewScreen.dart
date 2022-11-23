@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/widget/appButton.dart';
+import 'package:twitter_clone/screens/auth/Register.dart';
 
 class NewScreen extends StatefulWidget {
   const NewScreen({super.key});
@@ -33,43 +33,127 @@ class _NewScreenState extends State<NewScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 100),                
+              const SizedBox(height: 80),
+              Center(
+                child: ElevatedButton.icon(
+                  icon: Image.asset(
+                    "assets/google.png",
+                    width: 20,
+                    height: 20,
+                  ),
+                  label: const Text(
+                    "Continuer avec Google",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(10.0),
+                    fixedSize: const Size(280, 50),
+                    backgroundColor: Colors.white,
+                    textStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    elevation: 15,
+                    side: const BorderSide(
+                      color: Colors.white,
+                      width: 10,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: ElevatedButton.icon(
+                  icon: Image.asset(
+                    "assets/apple.png",
+                    width: 20,
+                    height: 20,
+                  ),
+                  label: const Text(
+                    "Continuer avec Apple",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(10.0),
+                    fixedSize: const Size(280, 50),
+                    backgroundColor: Colors.white,
+                    textStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    elevation: 15,
+                    side: const BorderSide(
+                      color: Colors.white,
+                      width: 10,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Ou", style: TextStyle(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Ou",
+                    style: TextStyle(
                       color: Colors.black,
                       fontSize: 13,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
-              AppButton(
-                onPressed: () {},
-                backgroundColor: Colors.black,
-                borderColor: Colors.black,
-                text: "Créer ton compte",
-                textColor: Colors.white,
-                width: 200,
-                height: 50,
-                image: null,
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(10.0),
+                  fixedSize: const Size(280, 50),
+                  backgroundColor: Colors.black,
+                  textStyle: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  elevation: 15,
+                  side: const BorderSide(
+                    color: Colors.black,
+                    width: 10,
+                  ),
+                ),
+                child: const Text(
+                  "Creer un compte",
+                ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text(
                     "Vous avez déjà un compte ?",
                   ),
-                  Text(" Connecter-vous", 
-                    style: TextStyle( 
-                      color: Colors.blue,
-
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      " Connecter-vous",
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
