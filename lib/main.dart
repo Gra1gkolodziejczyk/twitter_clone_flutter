@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:twitter_clone/screens/auth/NewScreen.dart';
+import 'package:twitter_clone/screens/auth/new_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {

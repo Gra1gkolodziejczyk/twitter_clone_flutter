@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/screens/auth/Register.dart';
-import 'package:twitter_clone/screens/auth/loginScreen.dart';
+import 'package:twitter_clone/screens/auth/register_screen.dart';
+import 'package:twitter_clone/screens/auth/login_screen.dart';
 
 class NewScreen extends StatefulWidget {
   const NewScreen({super.key});
@@ -102,7 +101,7 @@ class _NewScreenState extends State<NewScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+                children: const [
                   Text(
                     "Ou",
                     style: TextStyle(
