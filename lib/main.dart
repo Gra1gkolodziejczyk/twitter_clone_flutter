@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'screens/HomePage.dart';
+import 'screens/Profil.dart';
+import 'screens/Sujets.dart';
+import 'screens/Signets.dart';
+import 'screens/Listes.dart';
+import 'screens/CercleTwitter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,16 +16,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/': (context) => const HomePage(),
+          '/Profil': (context) => const Profil(
+                title: 'Profil',
+              ),
+          '/Sujets': (context) => const Sujets(
+                title: 'Sujets',
+              ),
+          '/Signets': (context) => const Signets(
+                title: 'Signets',
+              ),
+          '/Listes': (context) => const Listes(
+                title: 'Listes',
+              ),
+          '/CercleTwitter': (context) => const CercleTwitter(
+                title: 'CercleTwitter',
+              ),
+        },
+        initialRoute: '/');
   }
 }
